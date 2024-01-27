@@ -83,11 +83,12 @@
   overflow: hidden;
   border: 2px solid white;
   rotate: 3deg;
+  z-index: 99;
   transition: all 2s ease-in;
-}
-.part-6:hover {
-  rotate: 0deg;
-  background-color: brown;
+  &:hover {
+    rotate: 0deg;
+    background-color: brown;
+  }
 }
 .--all {
   border: 2px solid gray;
@@ -128,17 +129,41 @@
   word-spacing: 3px;
 }
 .--two {
-  border: none;
-  border-radius: 10px;
   overflow: hidden;
-  background-color: #21252967;
-  height: 940%;
-  position: relative;
-  margin: 10px;
-  transition: all 2s ease;
+  background-color: #2125297c;
+  height: 100%;
+  margin: 0px;
+  border: none;
+  width: 10px;
+  border-right: 10px solid hsl(186 100% 69%);
+  border-radius: 5px;
+  background-image: url("/First/New folder/pngwing.com\ \(1\).png");
+  background-size: cover;
+  background-position: 40%;
+  animation: flash 5s infinite;
+  transition: all 2s ease-in-out;
+
+  &:hover {
+    width: 100%;
+    margin-left: 0px;
+    border-left: none;
+    opacity: 0.7;
+    animation: glow 5s ease-in-out;
+  }
 }
-.--two:hover {
-  border-radius: 500px;
+.--two img {
+  width: 100px;
+  border: 2px solid white;
+}
+.--two h1 {
+  color: aliceblue;
+  width: 350px;
+  height: 100%;
+  font-size: 60px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
 }
 .--three {
   border: none;
@@ -187,15 +212,22 @@
   background-size: cover;
   background-position: 0% 80%;
   color: white;
+  filter: grayscale();
+  z-index: -99;
+  transition: all 2s ease-in;
+  &:hover {
+    filter: none;
+  }
 }
 .home {
   text-align: center;
   margin-inline: auto;
   padding-block: 20px;
-  background-color: #212529d0;
-  transition: all 2s ease;
+  background-color: #21252994;
+  transition: all 2s ease-in-out;
   &:hover {
     padding-block: 136px;
+    box-shadow: rgba(255, 255, 255, 0.45) 0px 25px 20px -20px;
   }
 }
 .home h1 {
@@ -209,8 +241,9 @@
 }
 .btn {
   border-radius: 25px;
-  border: 2px solid white;
-  &:hover {
-    animation: headShake 1s;
+  border: 2px solid;
+  transition: all ease-in;
+  &:active {
+    animation: bounce 1s;
   }
 }
